@@ -1,1 +1,11 @@
 
+body {
+    transition: background-color 0.3s, color 0.9s; /* Smooth transition between themes */
+  }
+  
+
+  body.dark {
+    background-color: #2d3748; /* Dark background for the entire app */
+    color: #beabab;
+  }
+  
