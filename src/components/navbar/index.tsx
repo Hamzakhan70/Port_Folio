@@ -10,7 +10,7 @@ interface NavbarProps {
 const Navbar = ({ dark, darkModeHandler }:NavbarProps) => {
   return (
     // <div className="flex justify-between px-32 py-8 bg-yellow-100 text-black dark:bg-blue-900 dark:text-white">
-    <div className="flex justify-between px-32 py-8">
+    <div className="flex justify-between">
       <ul className="flex space-x-5">
         <li>Home</li>
         <li>About</li>

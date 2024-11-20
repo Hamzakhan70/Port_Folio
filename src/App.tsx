@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/navbar";
 import FormWithMappedSelects from "./components/form/FormLearning";
+import Home from "./components/home";
 function App() {
    
    const [dark, setDark] = useState(true);
@@ -23,10 +24,11 @@ function App() {
     document.body.classList.toggle('dark'); // Toggle dark mode globally
   };
   return (
-    <>
+    <div className="px-[20rem] py-8">
      <Navbar dark={dark} darkModeHandler={darkModeHandler} />
-     <FormWithMappedSelects/>
-    </>
+     {/* <FormWithMappedSelects/> */}
+     <Home/>
+    </div>
   );
 }
 
