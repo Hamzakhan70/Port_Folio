@@ -1,33 +1,47 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/navbar";
+import AnimatedCursor from "react-animated-cursor";
 import FormWithMappedSelects from "./components/form/FormLearning";
 import Home from "./components/home";
 function App() {
-   
-   const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(true);
 
-   useEffect(() => {
-     const savedTheme = localStorage.getItem('theme');
-     if (savedTheme === 'dark') {
-       setDark(true);
-       document.body.classList.add('dark'); // Set dark mode globally
-     } else {
-       setDark(false);
-       document.body.classList.remove('dark'); // Set light mode globally
-     }
-   }, []);
-   const darkModeHandler = () => {
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setDark(true);
+      document.body.classList.add("dark"); // Set dark mode globally
+    } else {
+      setDark(false);
+      document.body.classList.remove("dark"); // Set light mode globally
+    }
+  }, []);
+  const darkModeHandler = () => {
     setDark(!dark);
-    const newTheme = !dark ? 'dark' : 'light';
-    localStorage.setItem('theme', newTheme); // Save theme preference to localStorage
-    document.body.classList.toggle('dark'); // Toggle dark mode globally
+    const newTheme = !dark ? "dark" : "light";
+    localStorage.setItem("theme", newTheme); // Save theme preference to localStorage
+    document.body.classList.toggle("dark"); // Toggle dark mode globally
   };
   return (
     <div className="px-[20rem] py-8">
-     <Navbar dark={dark} darkModeHandler={darkModeHandler} />
-     {/* <FormWithMappedSelects/> */}
-     <Home/>
+      <AnimatedCursor
+        innerSize={8}
+        outerSize={35}
+        innerScale={1}
+        outerScale={2}
+        outerAlpha={0}
+        hasBlendMode={true}
+        innerStyle={{
+          backgroundColor: "black",
+        }}
+        outerStyle={{
+          border: "3px solid black",
+        }}
+      />
+      <Navbar dark={dark} darkModeHandler={darkModeHandler} />
+      {/* <FormWithMappedSelects/> */}
+      <Home />
     </div>
   );
 }
