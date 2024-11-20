@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/navbar";
+import FormWithMappedSelects from "./components/form/FormLearning";
 function App() {
    
    const [dark, setDark] = useState(true);
@@ -24,6 +25,7 @@ function App() {
   return (
     <>
      <Navbar dark={dark} darkModeHandler={darkModeHandler} />
+     <FormWithMappedSelects/>
     </>
   );
 }
