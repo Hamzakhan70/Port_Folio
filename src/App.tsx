@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/navbar";
-
+import AnimatedCursor from "react-animated-cursor";
+import FormWithMappedSelects from "./components/form/FormLearning";
+import Home from "./components/home";
 function App() {
   const [dark, setDark] = useState(true);
 
@@ -22,8 +24,24 @@ function App() {
     document.body.classList.toggle("dark"); // Toggle dark mode globally
   };
   return (
-    <div className="px-32 py-8">
+    <div className="px-[20rem] py-8">
+      <AnimatedCursor
+        innerSize={8}
+        outerSize={35}
+        innerScale={1}
+        outerScale={2}
+        outerAlpha={0}
+        hasBlendMode={true}
+        innerStyle={{
+          backgroundColor: "black",
+        }}
+        outerStyle={{
+          border: "3px solid black",
+        }}
+      />
       <Navbar dark={dark} darkModeHandler={darkModeHandler} />
+      {/* <FormWithMappedSelects/> */}
+      <Home />
     </div>
   );
 }
