@@ -4,6 +4,7 @@ import Navbar from "./components/navbar";
 import AnimatedCursor from "react-animated-cursor";
 import FormWithMappedSelects from "./components/form/FormLearning";
 import Home from "./components/home";
+import AboutSection from "./components/about";
 function App() {
   const [dark, setDark] = useState(true);
 
@@ -31,7 +32,7 @@ function App() {
         innerScale={1}
         outerScale={2}
         outerAlpha={0}
-        hasBlendMode={true}
+        // hasBlendMode={true}
         innerStyle={{
           backgroundColor: "black",
         }}
@@ -42,6 +43,7 @@ function App() {
       <Navbar dark={dark} darkModeHandler={darkModeHandler} />
       {/* <FormWithMappedSelects/> */}
       {/* <Home /> */}
+      <AboutSection />
     </div>
   );
 }
