@@ -1,7 +1,10 @@
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import homeImage from "../../assets/home_image1.jpg";
-
+import "./style.css";
+import { useEffect, useRef } from "react";
 const Home = () => {
+
+  
   const [text] = useTypewriter({
     words: [
       "Hello, Name's Hamza Arif Khan😎",
@@ -10,7 +13,21 @@ const Home = () => {
     ],
     loop: false,
   });
+// Reference for the spinner text
+const textRef = useRef<HTMLDivElement | null>(null);
 
+useEffect(() => {
+  const text = textRef.current;
+  if (text) {
+    text.innerHTML = text.innerText
+  .split("")
+  .map(
+    (char, i) => `<span style="transform:rotate(${i * 10.3}deg)">${char}</span>`
+  )
+  .join("");
+  }
+}, []);
+ 
   return (
     <div className="flex justify-between items-center min-h-screen">
       <div className="left">
@@ -72,6 +89,18 @@ const Home = () => {
           >
             Contact
           </a>
+        </div>
+      </div>
+
+    {/* Animated Spinner Text */}
+    <div className="spinner-container">
+        <div className="circle">
+          <div className="logo"> Hire me!</div>
+          <div className="text" ref={textRef}>
+            <p>
+              - Mern Stack !  WEBSITE - 
+            </p>
+          </div>
         </div>
       </div>
     </div>
