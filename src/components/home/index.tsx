@@ -95,10 +95,10 @@ useEffect(() => {
         </div>
       </div>
 
-    {/* Animated Spinner Text */}
-    <div className="spinner-container">
-        <div className="circle ">
-          <div className={`logo ${dark? "bg-black text-white font-bold":"bg-white text-black font-bold"}`}> Hire me!</div>
+  
+    <div className="fixed top-6 right-5 md:bg-red md:top-[43rem] md:right-16 z-1000">
+        <div className="relative w-[200px] h-[200px] rounded-full flex justify-center items-center ">
+          <div className={`border rounded-full py-[50px] px-[35px] ${dark? "bg-white text-black font-bold":"bg-black text-white font-bold"}`}> Hire me!</div>
           <div className="text" ref={textRef}>
             <p>
               - Mern Stack !  WEBSITE - 
@@ -106,6 +106,7 @@ useEffect(() => {
           </div>
         </div>
       </div>
+      
     </div>
   );
 };

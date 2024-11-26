@@ -34,15 +34,15 @@ function App() {
         outerAlpha={0}
         // hasBlendMode={true}
         innerStyle={{
-          backgroundColor: dark ? "black" : "white",
+          backgroundColor: dark ? "white" : "black",
         }}
         outerStyle={{
-          border: `3px solid ${dark ? "black" : "white"}`,
+          border: `3px solid ${dark ? "white" : "black"}`,
         }}
       />
       <Navbar dark={dark} darkModeHandler={darkModeHandler} />
       {/* <FormWithMappedSelects/> */}
-      {/* <Home /> */}
+      <Home dark={dark} />
       <AboutSection />
     </div>
   );

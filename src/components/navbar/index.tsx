@@ -3,7 +3,7 @@ import { TiSocialLinkedinCircular } from "react-icons/ti";
 import { IoSunny, IoMoon } from "react-icons/io5";
 import "./style.css";
 import { useState } from "react";
-
+import { useEffect, useRef } from "react";
 interface NavbarProps {
   dark: boolean;
   darkModeHandler: () => void;
@@ -11,14 +11,25 @@ interface NavbarProps {
 
 const Navbar = ({ dark, darkModeHandler }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const textRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const text = textRef.current;
+    if (text) {
+      text.innerHTML = text.innerText
+    .split("")
+    .map(
+      (char, i) => `<span style="transform:rotate(${i * 10.3}deg)">${char}</span>`
+    )
+    .join("");
+    }
+  }, []);
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
 
   return (
     <>
-      {/* Small Screen Navbar */}
+    
       <div className="md:hidden absolute left-4 top-4 z-20">
         {isOpen ? (
           <FaTimes
@@ -32,7 +43,8 @@ const Navbar = ({ dark, darkModeHandler }: NavbarProps) => {
 
       {/* Navbar Menu for Small Screens */}
       {isOpen && (
-        <div className="md:hidden absolute inset-x-0 top-0 bg-black bg-opacity-90 text-white h-68 my-16 mx-8 z-10 flex flex-col items-center justify-center space-y-4">
+     <>
+        <div className="md:hidden inset-x-0 rounded fixed  bg-opacity-70 bg-black text-white h-[25rem] my-[8rem] mx-8 z-10 flex flex-col items-center justify-center space-y-4">
           <ul className="flex flex-col space-y-3 text-lg font-medium">
             <li onClick={toggleSidebar} className="cursor-pointer">
               Home
@@ -65,7 +77,25 @@ const Navbar = ({ dark, darkModeHandler }: NavbarProps) => {
             </li>
           </ul>
         </div>
+     </>
+
       )}
+      {/* {isOpen && (
+     <>
+       
+ <div className="spinner-container">
+ <div className="circle ">
+   <div className={`logo ${dark? "bg-red-500 text-black font-bold":"bg-black text-white font-bold"}`}> Hire me!</div>
+   <div className="text" ref={textRef}>
+     <p>
+       - Mern Stack !  WEBSITE - 
+     </p>
+   </div>
+ </div>
+</div>
+     </>
+
+      )} */}
 
       {/* Navbar Menu for Large Screens */}
       <div className="hidden md:flex justify-between">
