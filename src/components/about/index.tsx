@@ -61,7 +61,7 @@ const AboutSection: React.FC = () => {
           <p
             key={idx}
             ref={(el) => el && elementsRef.current.push(el)}
-            className="mb-4 text-lg leading-relaxed translate-y-8 transition-all duration-700 text-black"
+            className="mb-4 text-lg leading-relaxed translate-y-8 transition-all duration-700"
             style={{ transitionDelay: `${idx * 0.2}s` }}
           >
             {text}

@@ -2,7 +2,11 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 import homeImage from "../../assets/home_image1.jpg";
 import "./style.css";
 import { useEffect, useRef } from "react";
-const Home = () => {
+interface HomeProps {
+  dark: boolean; // Define the type for the dark prop
+}
+
+const Home: React.FC<HomeProps> = ({ dark }) => {
 
   
   const [text] = useTypewriter({
@@ -13,7 +17,6 @@ const Home = () => {
     ],
     loop: false,
   });
-// Reference for the spinner text
 const textRef = useRef<HTMLDivElement | null>(null);
 
 useEffect(() => {
@@ -94,8 +97,8 @@ useEffect(() => {
 
     {/* Animated Spinner Text */}
     <div className="spinner-container">
-        <div className="circle">
-          <div className="logo"> Hire me!</div>
+        <div className="circle ">
+          <div className={`logo ${dark? "bg-black text-white font-bold":"bg-white text-black font-bold"}`}> Hire me!</div>
           <div className="text" ref={textRef}>
             <p>
               - Mern Stack !  WEBSITE - 
