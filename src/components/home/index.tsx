@@ -37,7 +37,7 @@ useEffect(() => {
         <img
           src={homeImage}
           alt="Developer image"
-          className="rounded-md w-78 h-[36rem] object-cover"
+          className="rounded-md w-[78rem] h-[36rem] object-cover"
         />
       </div>
       <div className="right max-w-3xl text-center">

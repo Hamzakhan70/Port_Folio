@@ -25,7 +25,7 @@ function App() {
     document.body.classList.toggle("dark"); // Toggle dark mode globally
   };
   return (
-    <div className="px-[20rem] py-8">
+    <div className="sm:px-[8rem] sm:py-8 xl:px-[20rem] xl:py-8">
       <AnimatedCursor
         innerSize={8}
         outerSize={35}
@@ -42,8 +42,8 @@ function App() {
       />
       <Navbar dark={dark} darkModeHandler={darkModeHandler} />
       {/* <FormWithMappedSelects/> */}
-      <Home dark={dark} />
-      <AboutSection/>
+      {/* <Home /> */}
+      <AboutSection />
     </div>
   );
 }
