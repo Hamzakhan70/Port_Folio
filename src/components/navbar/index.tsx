@@ -44,7 +44,7 @@ const Navbar = ({ dark, darkModeHandler }: NavbarProps) => {
       {/* Navbar Menu for Small Screens */}
       {isOpen && (
      <>
-        <div className="md:hidden inset-x-0 rounded fixed  bg-opacity-70 bg-black text-white h-[25rem] my-[8rem] mx-8 z-10 flex flex-col items-center justify-center space-y-4">
+        <div className={` md:hidden inset-x-0 rounded fixed  bg-opacity-70 h-[25rem] my-[8rem] mx-8 z-10 flex flex-col items-center justify-center space-y-4  ${dark? "bg-white text-black": "bg-black text-white"}`}>
           <ul className="flex flex-col space-y-3 text-lg font-medium">
             <li onClick={toggleSidebar} className="cursor-pointer">
               Home

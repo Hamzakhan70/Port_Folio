@@ -40,10 +40,10 @@ function App() {
           border: `3px solid ${dark ? "white" : "black"}`,
         }}
       />
-      <Navbar dark={dark} darkModeHandler={darkModeHandler} />
+      <Navbar dark={dark} darkModeHandler={darkModeHandler}  />
       {/* <FormWithMappedSelects/> */}
       <Home dark={dark} />
-      <AboutSection />
+      {/* <AboutSection /> */}
     </div>
   );
 }

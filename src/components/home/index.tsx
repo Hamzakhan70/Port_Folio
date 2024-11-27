@@ -32,26 +32,28 @@ useEffect(() => {
 }, []);
  
   return (
-    <div className="flex justify-between items-center min-h-screen">
-      <div className="left">
+    <div className=" items-center min-h-screen ">
+   <div className="imgandcontent_container mt-[10rem] p-8 flex flex-col md:flex-row md:justify-between md:mt-[3rem] space-x-5">
+   <div className="left">
         <img
           src={homeImage}
           alt="Developer image"
-          className="rounded-md w-[78rem] h-[36rem] object-cover"
+          // className="w-[15rem] sm:w-[35rem] mt-[10rem] mb-[2rem] rounded-md md:w-[78rem] md:h-[36rem] object-cover"     this is for the with of the image 
+          className="  mb-[2rem] rounded-md md:w-[78rem] md:h-[36rem] object-cover"
         />
       </div>
-      <div className="right max-w-3xl text-center">
-        <h1 className="font-bold text-6xl mb-4">
+      <div className="right max-w-3xl text-center flex flex-col justify-center items-center">
+        <h1 className="text-[2.2rem] font-bold md:text-6xl mb-4">
           <span>{text}</span>
           <Cursor cursorColor="white" />
         </h1>
-        <p className="mb-6 text-2xl text-justify">
+        <p className="mb-6 text-2xl md:text-justify">
           As a skilled full-stack developer, I am dedicated to turning ideas
           into innovative web applications. Explore my latest projects and
           articles, showcasing my expertise in React.js and web development.
         </p>
 
-        <div className="button flex items-center">
+        <div className="justify-center button flex items-center ">
           <a target="_blank" href="/ateeb-resume.pdf">
             <div className="group relative cursor-pointer overflow-hidden border-2 border-accent-light text-center dark:border-light flex items-center justify-center rounded-lg bg-dark p-2.5 px-[24px] py-[10px] text-lg font-semibold text-light dark:bg-light dark:text-dark mob:p-2 mob:px-4 mob:text-base">
               <span
@@ -94,19 +96,31 @@ useEffect(() => {
           </a>
         </div>
       </div>
+   </div>
 
   
-    <div className="fixed top-6 right-5 md:bg-red md:top-[43rem] md:right-16 z-1000">
+    {/* <div className="fixed top-6 right-5 md:bg-red md:top-[43rem] md:right-16 z-1000">
         <div className="relative w-[200px] h-[200px] rounded-full flex justify-center items-center ">
-          <div className={`border rounded-full py-[50px] px-[35px] ${dark? "bg-white text-black font-bold":"bg-black text-white font-bold"}`}> Hire me!</div>
+          <div className={`border rounded-full py-[25px] px-[20px]  md:py-[50px] md:px-[35px] ${dark? "bg-white text-black font-bold":"bg-black text-white font-bold"}`}> Hire me!</div>
           <div className="text" ref={textRef}>
             <p>
               - Mern Stack !  WEBSITE - 
             </p>
           </div>
         </div>
-      </div>
-      
+      </div> */}
+      <div className="fixed top-[0.5rem] right-[0.75rem] md:bg-red md:top-[43rem] md:right-16 z-1000">
+  <div className="relative w-[140px] h-[115px] md:w-[200px] md:h-[200px] rounded-full flex justify-center items-center">
+    <div className={`border rounded-full py-[25px] px-[7px] text-sm md:font-bold md:py-[50px] md:px-[35px] ${dark ? "bg-white text-black" : "bg-black text-white"}`}>
+      Hire me!
+    </div>
+    <div className="text" ref={textRef}>
+      <p>
+        - Mern Stack !  WEBSITE - 
+      </p>
+    </div>
+  </div>
+</div>
     </div>
   );
 };
