@@ -11,7 +11,7 @@ export default {
         },
       },
       animation: {
-        appear: 'appear 0.8s ease-out forwards',
+        appear: 'appear 1.5s ease-out forwards',
       },
     },
   },

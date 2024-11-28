@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import "./style.css";
+// import "./style.css";
 
 const AboutSection: React.FC = () => {
   const elementsRef = useRef<HTMLDivElement[]>([]);
@@ -68,20 +68,20 @@ const AboutSection: React.FC = () => {
           </p>
         ))}
       </div>
-
+{/* 
       <div className="flex flex-col sm:flex-row justify-center space-y-6 sm:space-y-0 sm:space-x-8 mt-10">
         {stats.map((stat, idx) => (
           <div
             key={idx}
             ref={(el) => el && elementsRef.current.push(el)}
-            className="opacity-0 translate-y-8 transition-all duration-700 text-center"
+            className=" translate-y-8 transition-all duration-700 text-center"
             style={{ transitionDelay: `${idx * 0.2 + 0.5}s` }}
           >
             <h2 className="text-5xl font-bold text-blue-500">{stat.value}</h2>
             <p className="text-lg text-white">{stat.label}</p>
           </div>
         ))}
-      </div>
+      </div> */}
     </section>
   );
 };
