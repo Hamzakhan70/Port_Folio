@@ -47,7 +47,7 @@ useEffect(() => {
           <span>{text}</span>
           <Cursor cursorColor="white" />
         </h1>
-        <p className="mb-6 text-2xl md:text-justify">
+        <p className="mb-6 text-2xl text-justify">
           As a skilled full-stack developer, I am dedicated to turning ideas
           into innovative web applications. Explore my latest projects and
           articles, showcasing my expertise in React.js and web development.

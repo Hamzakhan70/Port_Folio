@@ -43,7 +43,7 @@ function App() {
       <Navbar dark={dark} darkModeHandler={darkModeHandler}  />
       {/* <FormWithMappedSelects/> */}
       <Home dark={dark} />
-      {/* <AboutSection /> */}
+      <AboutSection />
     </div>
   );
 }

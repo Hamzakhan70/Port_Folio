@@ -33,9 +33,9 @@ const AboutSection: React.FC = () => {
   ];
   const details = [
     
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in neque sit amet nisl feugiat luctus vel nec ex.",
-        "Proin eu magna ut nisi tristique placerat. Curabitur varius, nunc ac vestibulum vehicula, turpis nunc bibendum ligula.",
-        "Integer at ante in urna porttitor aliquam. Suspendisse nec ultricies elit, nec pulvinar dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in neque sit amet nisl feugiat luctus vel nec ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in neque sit amet nisl feugiat luctus vel nec ex.",
+        "Proin eu magna ut nisi tristique placerat. Curabitur varius, nunc ac vestibulum vehicula, turpis nunc bibendum ligula. Proin eu magna ut nisi tristique placerat. Curabitur varius, nunc ac vestibulum vehicula, turpis nunc bibendum ligula.",
+        "Integer at ante in urna porttitor aliquam. Suspendisse nec ultricies elit, nec pulvinar dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit. Integer at ante in urna porttitor aliquam. Suspendisse nec ultricies elit, nec pulvinar dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       
   ];
 
@@ -53,7 +53,7 @@ const AboutSection: React.FC = () => {
       <div className="mb-8">
         <h3
           ref={(el) => el && elementsRef.current.push(el)}
-          className="text-2xl font-semibold mb-6 text-center"
+          className="text-2xl text-left font-semibold mb-6"
         >
           BIOGRAPHY
         </h3>
@@ -61,7 +61,7 @@ const AboutSection: React.FC = () => {
           <p
             key={idx}
             ref={(el) => el && elementsRef.current.push(el)}
-            className="mb-4 text-lg leading-relaxed translate-y-8 transition-all duration-700"
+            className="mb-4 text-lg leading-relaxed translate-y-8 transition-all duration-700 text-justify"
             style={{ transitionDelay: `${idx * 0.2}s` }}
           >
             {text}
