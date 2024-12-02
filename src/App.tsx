@@ -6,10 +6,11 @@ import FormWithMappedSelects from "./components/form/FormLearning";
 import Home from "./components/home";
 import AboutSection from "./components/about";
 function App() {
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
+    console.log(savedTheme,"saved theme");
     if (savedTheme === "dark") {
       setDark(true);
       document.body.classList.add("dark"); // Set dark mode globally
