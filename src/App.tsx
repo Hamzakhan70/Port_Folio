@@ -29,7 +29,7 @@ function App() {
   
   return (
     <div className="sm:px-[8rem] sm:py-8 xl:px-[20rem] xl:py-8">
-      {/* <AnimatedCursor
+      <AnimatedCursor
         innerSize={8}
         outerSize={35}
         innerScale={1}
@@ -42,7 +42,7 @@ function App() {
         outerStyle={{
           border: `3px solid ${dark ? "white" : "black"}`,
         }}
-      /> */}
+      />
       <Navbar dark={dark} darkModeHandler={darkModeHandler}  />
       {/* <FormWithMappedSelects/> */}
       <Home dark={dark} />
