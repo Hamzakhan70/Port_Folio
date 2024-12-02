@@ -50,7 +50,7 @@ const AboutSection: React.FC = () => {
         </h2>
       </div>
 
-      <div className="mb-8">
+      <div className="mb-8 px-6">
         <h3
           ref={(el) => el && elementsRef.current.push(el)}
           className="text-2xl text-left font-semibold mb-6"

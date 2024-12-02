@@ -13,6 +13,7 @@ const Navbar = ({ dark, darkModeHandler }: NavbarProps) => {
   const [activeMenu, setActiveMenu] = useState(""); 
   const [isOpen, setIsOpen] = useState(false);
   const textRef = useRef<HTMLDivElement | null>(null);
+  
   useEffect(() => {
     const text = textRef.current;
     if (text) {
@@ -24,6 +25,7 @@ const Navbar = ({ dark, darkModeHandler }: NavbarProps) => {
     .join("");
     }
   }, []);
+
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
