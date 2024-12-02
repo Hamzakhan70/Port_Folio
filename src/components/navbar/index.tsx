@@ -10,6 +10,7 @@ interface NavbarProps {
 }
 
 const Navbar = ({ dark, darkModeHandler }: NavbarProps) => {
+  const [activeMenu, setActiveMenu] = useState(""); 
   const [isOpen, setIsOpen] = useState(false);
   const textRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
@@ -28,8 +29,7 @@ const Navbar = ({ dark, darkModeHandler }: NavbarProps) => {
   };
 
   return (
-    <>
-    
+    <> 
       <div className="md:hidden absolute left-4 top-4 z-20">
         {isOpen ? (
           <FaTimes
@@ -41,7 +41,7 @@ const Navbar = ({ dark, darkModeHandler }: NavbarProps) => {
         )}
       </div>
 
-      {/* Navbar Menu for Small Screens */}
+     
       {isOpen && (
      <>
         <div className={` md:hidden inset-x-0 rounded fixed  bg-opacity-70 h-[25rem] my-[8rem] mx-8 z-10 flex flex-col items-center justify-center space-y-4  ${dark? "bg-white text-black": "bg-black text-white"}`}>
@@ -80,37 +80,30 @@ const Navbar = ({ dark, darkModeHandler }: NavbarProps) => {
      </>
 
       )}
-      {/* {isOpen && (
-     <>
-       
- <div className="spinner-container">
- <div className="circle ">
-   <div className={`logo ${dark? "bg-red-500 text-black font-bold":"bg-black text-white font-bold"}`}> Hire me!</div>
-   <div className="text" ref={textRef}>
-     <p>
-       - Mern Stack !  WEBSITE - 
-     </p>
-   </div>
- </div>
-</div>
-     </>
 
-      )} */}
-
-      {/* Navbar Menu for Large Screens */}
       <div className="hidden md:flex justify-between">
-        <ul className="flex space-x-5">
-          <li>Home</li>
-          <li>About</li>
-          <li>Project</li>
-          <li>Blog</li>
-        </ul>
+      <ul className="flex space-x-5">
+        {["Home", "About", "Project", "Blog"].map((menu) => (
+          <li
+            key={menu}
+            onMouseEnter={() => setActiveMenu(menu)}
+            onMouseLeave={() => setActiveMenu("")}
+            className={`cursor-pointer font-bold ${
+              activeMenu === menu ? "opacity-100 underline" : activeMenu ? "opacity-50" : "opacity-100"
+            } transition-opacity duration-300`}
+          >
+            {menu}
+          </li>
+        ))}
+      </ul>
         <ul className="flex items-center space-x-3">
           <li className="text-2xl">
-            <FaGithub />
+            <FaGithub  onClick={() => window.open("https://github.com/Hamzakhan70", "_blank")}
+            className="cursor-pointer "/>
           </li>
           <li className="text-3xl">
-            <TiSocialLinkedinCircular />
+            <TiSocialLinkedinCircular  onClick={() => window.open("https://linkedin.com/in/hamza-arif- khan-87064319b", "_blank")}
+            className="cursor-pointer  "/>
           </li>
           <li className="text-2xl mt-1">
             <button onClick={darkModeHandler}>
@@ -123,6 +116,7 @@ const Navbar = ({ dark, darkModeHandler }: NavbarProps) => {
           </li>
         </ul>
       </div>
+
     </>
   );
 };
