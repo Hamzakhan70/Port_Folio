@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 // import "./style.css";
-
+import CountUp from "react-countup";
 const AboutSection: React.FC = () => {
   const elementsRef = useRef<HTMLDivElement[]>([]);
 
@@ -32,11 +32,9 @@ const AboutSection: React.FC = () => {
     { label: "Years of Experience", value: "2+" },
   ];
   const details = [
-    
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in neque sit amet nisl feugiat luctus vel nec ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in neque sit amet nisl feugiat luctus vel nec ex.",
-        "Proin eu magna ut nisi tristique placerat. Curabitur varius, nunc ac vestibulum vehicula, turpis nunc bibendum ligula. Proin eu magna ut nisi tristique placerat. Curabitur varius, nunc ac vestibulum vehicula, turpis nunc bibendum ligula.",
-        "Integer at ante in urna porttitor aliquam. Suspendisse nec ultricies elit, nec pulvinar dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit. Integer at ante in urna porttitor aliquam. Suspendisse nec ultricies elit, nec pulvinar dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in neque sit amet nisl feugiat luctus vel nec ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in neque sit amet nisl feugiat luctus vel nec ex.",
+    "Proin eu magna ut nisi tristique placerat. Curabitur varius, nunc ac vestibulum vehicula, turpis nunc bibendum ligula. Proin eu magna ut nisi tristique placerat. Curabitur varius, nunc ac vestibulum vehicula, turpis nunc bibendum ligula.",
+    "Integer at ante in urna porttitor aliquam. Suspendisse nec ultricies elit, nec pulvinar dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit. Integer at ante in urna porttitor aliquam. Suspendisse nec ultricies elit, nec pulvinar dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   ];
 
   return (
@@ -68,20 +66,42 @@ const AboutSection: React.FC = () => {
           </p>
         ))}
       </div>
-{/* 
+
       <div className="flex flex-col sm:flex-row justify-center space-y-6 sm:space-y-0 sm:space-x-8 mt-10">
         {stats.map((stat, idx) => (
           <div
             key={idx}
-            ref={(el) => el && elementsRef.current.push(el)}
+            // ref={(el) => el && elementsRef.current.push(el)}
             className=" translate-y-8 transition-all duration-700 text-center"
             style={{ transitionDelay: `${idx * 0.2 + 0.5}s` }}
           >
-            <h2 className="text-5xl font-bold text-blue-500">{stat.value}</h2>
+            <h2 className="text-7xl font-bold">
+              {
+                <CountUp
+                  start={-5.039}
+                  end={5}
+                  duration={2.75}
+                  separator=" "
+                  decimals={0}
+                  decimal=","
+                  // prefix="EUR "
+                  suffix="+"
+                  onEnd={() => console.log("Ended! 👏")}
+                  onStart={() => console.log("Started! 💨")}
+                >
+                  {({ countUpRef, start }) => (
+                    <div>
+                      <span ref={countUpRef} />
+                      {/* <button onClick={start}>Start</button> */}
+                    </div>
+                  )}
+                </CountUp>
+              }
+            </h2>
             <p className="text-lg text-white">{stat.label}</p>
           </div>
         ))}
-      </div> */}
+      </div>
     </section>
   );
 };
