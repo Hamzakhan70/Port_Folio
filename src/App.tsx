@@ -5,6 +5,7 @@ import AnimatedCursor from "react-animated-cursor";
 import FormWithMappedSelects from "./components/form/FormLearning";
 import Home from "./components/home";
 import AboutSection from "./components/about";
+import Skills from "./components/skills";
 function App() {
   const [dark, setDark] = useState(false);
 
@@ -47,6 +48,7 @@ function App() {
       {/* <FormWithMappedSelects/> */}
       <Home dark={dark} />
       <AboutSection />
+      <Skills/>
     </div>
   );
 }

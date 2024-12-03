@@ -44,11 +44,11 @@ const Home: React.FC<HomeProps> = ({ dark }) => {
           />
         </div>
         <div className="right max-w-3xl text-center flex flex-col justify-center items-center">
-          <h1 className="text-[2.2rem] font-bold md:text-6xl mb-4">
+          <h1 className="text-[2.2rem] font-bold md:text-6xl mb-4 h-[12rem] md:h-[19rem]">
             <span>{text}</span>
             <Cursor cursorColor="orange" />
           </h1>
-          <p className="mb-6 text-2xl text-justify">
+          <p className="my-6 text-2xl text-justify">
             As a skilled full-stack developer, I am dedicated to turning ideas
             into innovative web applications. Explore my latest projects and
             articles, showcasing my expertise in React.js and web development.
