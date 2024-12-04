@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Tooltip } from "react-tooltip";
-
-const Skills = () => {
+ interface skillsInterface{
+  dark:Boolean;
+}
+const Skills:React.FC<skillsInterface> = ({dark}) => {
   const skills = [
     { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
     { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
@@ -37,7 +39,7 @@ const Skills = () => {
       </motion.div>
 
       {/* Skills Grid */}
-      <div className="grid grid-cols-3 lg:grid-cols-4 gap-6 py-8 px-[14rem]">
+      <div className="grid grid-cols-3 lg:grid-cols-4 gap-6 py-8 px-[25rem]">
         {skills.map((skill, idx) => {
           // Determine animation direction based on the row number
           const isEvenRow = Math.floor(idx / 4) % 2 === 0;
@@ -58,7 +60,7 @@ const Skills = () => {
               whileInView="visible"
               viewport={{ once: false, amount: 0.5 }}
               variants={animationVariants}
-              className="relative group flex items-center justify-center p-4 rounded-full border-2 border-gray-300 hover:shadow-lg transition-all duration-300"
+              className={`relative group flex items-center justify-center p-4 rounded-full border-2 border-black hover:shadow-lg transition-all duration-300 ${dark ? "hover:shadow-red-400":"hover:shadow-white"}`}
               data-tooltip-id={`tooltip-${idx}`}
               data-tooltip-content={skill.name}
             >
