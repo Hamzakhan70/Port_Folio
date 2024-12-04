@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/navbar";
 import AnimatedCursor from "react-animated-cursor";
-import FormWithMappedSelects from "./components/form/FormLearning";
+// import FormWithMappedSelects from "./components/form/FormLearning";
 import Home from "./components/home";
 import AboutSection from "./components/about";
 import Skills from "./components/skills";
+import Experience from "./components/experience";
 function App() {
   const [dark, setDark] = useState(false);
 
@@ -48,7 +49,8 @@ function App() {
       {/* <FormWithMappedSelects/> */}
       <Home dark={dark} />
       <AboutSection />
-      <Skills/>
+      <Skills dark={dark}/>
+      <Experience dark={dark}/>
     </div>
   );
 }
