@@ -7,6 +7,7 @@ import Home from "./components/home";
 import AboutSection from "./components/about";
 import Skills from "./components/skills";
 import Experience from "./components/experience";
+import Education from "./components/education";
 function App() {
   const [dark, setDark] = useState(false);
 
@@ -51,6 +52,7 @@ function App() {
       <AboutSection />
       <Skills dark={dark}/>
       <Experience dark={dark}/>
+      <Education/>
     </div>
   );
 }

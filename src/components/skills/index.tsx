@@ -41,7 +41,7 @@ const Skills:React.FC<skillsInterface> = ({dark}) => {
       </motion.div>
 
       {/* Skills Grid */}
-      <div className="grid grid-cols-3 lg:grid-cols-4 gap-6 py-8 px-[25rem]">
+      <div className="grid grid-cols-3 lg:grid-cols-4 gap-6 py-8 px-[5rem]">
         {skills.map((skill, idx) => {
           // Determine animation direction based on the row number
           const isEvenRow = Math.floor(idx / 4) % 2 === 0;
